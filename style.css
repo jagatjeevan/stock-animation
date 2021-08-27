@@ -1,0 +1,199 @@
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes baseline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes stock-bars1 {
+  from {
+    height: 0;
+    margin-top: 110px;
+  }
+  to {
+    height: 50px;
+    margin-top: 60px;
+  }
+}
+@keyframes stock-bars2 {
+  from {
+    height: 0;
+    margin-top: 110px;
+  }
+  to {
+    height: 90px;
+    margin-top: 20px;
+  }
+}
+
+@keyframes stock-bars3 {
+  from {
+    height: 0;
+    margin-top: 110px;
+  }
+  to {
+    height: 70px;
+    margin-top: 40px;
+  }
+}
+@keyframes stock-bars4 {
+  from {
+    height: 0;
+    margin-top: 110px;
+  }
+  to {
+    height: 110px;
+    margin-top: 0px;
+  }
+}
+@keyframes arrowHead {
+  from {
+    opacity: 0.5;
+    transform: translate(-25px, 25px) rotate(45deg) scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: translate(15px, -15px) rotate(45deg) scale(1.5);
+  }
+}
+@keyframes firstAscend {
+  from {
+    width: 0;
+  }
+  to {
+    width: 67px;
+  }
+}
+@keyframes secondAscend {
+  from {
+    width: 0;
+  }
+  to {
+    width: 58px;
+  }
+}
+@keyframes thirdAscend {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85px;
+  }
+}
+.logo-container {
+  width: 350px;
+  height: 300px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.75);
+  padding: 10px;
+}
+
+.logo {
+  position: relative;
+  width: 350px;
+  height: 300px;
+}
+
+.baseline {
+  border: 3px solid #861f41;
+  border-radius: 6px;
+  box-sizing: border-box;
+  animation: baseline 2s ease-in-out forwards;
+}
+
+.stock-bars {
+  height: 110px;
+  padding-left: 10px;
+}
+.stock-bars::after {
+  display: block;
+  clear: both;
+}
+.stock-bars .bar {
+  float: left;
+  background: #861f41;
+  width: 6px;
+  border-radius: 6px;
+  margin-right: 20px;
+  position: relative;
+  margin-left: 20px;
+  bottom: -1px;
+}
+.stock-bars .bar1 {
+  animation: stock-bars1 0.5s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+.stock-bars .bar2 {
+  animation: stock-bars2 0.5s ease-in-out forwards;
+  animation-delay: 0.7s;
+}
+.stock-bars .bar3 {
+  animation: stock-bars3 0.5s ease-in-out forwards;
+  animation-delay: 1.2s;
+}
+.stock-bars .bar4 {
+  animation: stock-bars4 0.5s ease-in-out forwards;
+  animation-delay: 1.7s;
+}
+
+.arrow-path {
+  height: 80px;
+  position: relative;
+  bottom: -30px;
+}
+
+.ascend {
+  background: #861f41;
+  height: 6px;
+  border-radius: 6px;
+  position: absolute;
+  transform-origin: left;
+}
+.ascend.first {
+  left: 30px;
+  top: 78px;
+  transform: rotate(-45deg);
+  animation: firstAscend 0.5s ease-in-out forwards;
+  animation-delay: 0.7s;
+}
+.ascend.second {
+  left: 75px;
+  top: 31px;
+  transform: rotate(25deg);
+  animation: secondAscend 0.5s ease-in-out forwards;
+  animation-delay: 1.2s;
+}
+.ascend.third {
+  left: 125px;
+  top: 57px;
+  transform: rotate(-42deg);
+  animation: thirdAscend 1s ease-in-out forwards;
+  animation-delay: 1.7s;
+}
+
+.arrow-head {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #861f41;
+  position: absolute;
+  top: 15px;
+  left: 160px;
+  opacity: 0;
+  transform: rotate(45deg);
+  animation: arrowHead 0.9s ease-in-out forwards;
+  animation-delay: 1.91s;
+}
