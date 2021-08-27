@@ -1,0 +1,229 @@
+@use "sass:math";
+
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+$logo-color: #861f41;
+$logo-container-width: 350px;
+$logo-container-height: 300px;
+$logo-container-padding: 10px;
+$stock-bar-contaier-height: 110px;
+$line-thickness: 6px;
+
+@mixin traingle-up(
+  $base: 10px,
+  $border-left: 10px,
+  $border-right: 10px,
+  $triangle-color: $logo-color
+) {
+  width: 0;
+  height: 0;
+  border-left: $border-left solid transparent;
+  border-right: $border-right solid transparent;
+  border-bottom: $base solid $triangle-color;
+}
+
+@mixin getStockHeight($height) {
+  height: $height;
+  margin-top: $stock-bar-contaier-height - $height;
+}
+
+@keyframes baseline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes stock-bars1 {
+  from {
+    @include getStockHeight(0);
+  }
+  to {
+    @include getStockHeight(50px);
+  }
+}
+
+@keyframes stock-bars2 {
+  from {
+    @include getStockHeight(0);
+  }
+  to {
+    @include getStockHeight(90px);
+  }
+}
+
+@keyframes stock-bars3 {
+  from {
+    @include getStockHeight(0);
+  }
+  to {
+    @include getStockHeight(70px);
+  }
+}
+@keyframes stock-bars4 {
+  from {
+    @include getStockHeight(0);
+  }
+  to {
+    @include getStockHeight(110px);
+  }
+}
+
+@keyframes arrowHead {
+  from {
+    opacity: 0.5;
+    transform: translate(-25px, 25px) rotate(45deg) scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: translate(15px, -15px) rotate(45deg) scale(1.5);
+  }
+}
+
+@keyframes firstAscend {
+  from {
+    width: 0;
+  }
+  to {
+    width: 67px;
+  }
+}
+
+@keyframes secondAscend {
+  from {
+    width: 0;
+  }
+  to {
+    width: 58px;
+  }
+}
+
+@keyframes thirdAscend {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85px;
+  }
+}
+
+.logo-container {
+  width: $logo-container-width;
+  height: $logo-container-height;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.75);
+  padding: $logo-container-padding;
+}
+
+.logo {
+  position: relative;
+  width: $logo-container-width;
+  height: $logo-container-height;
+}
+
+.baseline {
+  border: math.div($line-thickness, 2) solid $logo-color;
+  border-radius: $line-thickness;
+  box-sizing: border-box;
+  animation: baseline 2s ease-in-out forwards;
+}
+
+.stock-bars {
+  height: $stock-bar-contaier-height;
+  padding-left: 10px;
+  &::after {
+    display: block;
+    clear: both;
+  }
+  .bar {
+    float: left;
+    background: $logo-color;
+    width: $line-thickness;
+    border-radius: $line-thickness;
+    margin-right: 20px;
+    position: relative;
+    margin-left: 20px;
+    bottom: -1px;
+  }
+
+  .bar1 {
+    animation: stock-bars1 0.5s ease-in-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  .bar2 {
+    animation: stock-bars2 0.5s ease-in-out forwards;
+    animation-delay: 0.7s;
+  }
+
+  .bar3 {
+    animation: stock-bars3 0.5s ease-in-out forwards;
+    animation-delay: 1.2s;
+  }
+
+  .bar4 {
+    animation: stock-bars4 0.5s ease-in-out forwards;
+    animation-delay: 1.7s;
+  }
+}
+
+.arrow-path {
+  height: 80px;
+  bottom: -30px;
+  position: relative;
+}
+
+.ascend {
+  background: $logo-color;
+  height: $line-thickness;
+  border-radius: $line-thickness;
+  position: absolute;
+  transform-origin: left;
+
+  &.first {
+    left: 30px;
+    top: 78px;
+    transform: rotate(-45deg);
+
+    animation: firstAscend 0.5s ease-in-out forwards;
+    animation-delay: 0.7s;
+  }
+  &.second {
+    left: 75px;
+    top: 31px;
+    transform: rotate(25deg);
+
+    animation: secondAscend 0.5s ease-in-out forwards;
+    animation-delay: 1.2s;
+  }
+  &.third {
+    left: 125px;
+    top: 57px;
+    transform: rotate(-42deg);
+
+    animation: thirdAscend 1s ease-in-out forwards;
+    animation-delay: 1.7s;
+  }
+}
+
+.arrow-head {
+  @include traingle-up();
+  position: absolute;
+  top: 13px;
+  left: 163px;
+  opacity: 0;
+  transform: rotate(45deg);
+  animation: arrowHead 0.6s ease-in-out forwards;
+  animation-delay: 2s;
+}

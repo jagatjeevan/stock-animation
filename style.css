@@ -38,7 +38,6 @@ body {
     margin-top: 20px;
   }
 }
-
 @keyframes stock-bars3 {
   from {
     height: 0;
@@ -150,8 +149,8 @@ body {
 
 .arrow-path {
   height: 80px;
-  position: relative;
   bottom: -30px;
+  position: relative;
 }
 
 .ascend {
@@ -190,10 +189,12 @@ body {
   border-right: 10px solid transparent;
   border-bottom: 10px solid #861f41;
   position: absolute;
-  top: 15px;
-  left: 160px;
+  top: 13px;
+  left: 163px;
   opacity: 0;
   transform: rotate(45deg);
-  animation: arrowHead 0.9s ease-in-out forwards;
-  animation-delay: 1.91s;
+  animation: arrowHead 0.6s ease-in-out forwards;
+  animation-delay: 2s;
 }
+
+/*# sourceMappingURL=style.css.map */
