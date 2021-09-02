@@ -123,7 +123,7 @@ body {
   0% {
     width: 0;
   }
-  15% {
+  13% {
     width: 68px;
   }
   100% {
@@ -131,10 +131,10 @@ body {
   }
 }
 @keyframes secondAscend {
-  15% {
+  13% {
     width: 0;
   }
-  30% {
+  27% {
     width: 60px;
   }
   100% {
@@ -142,10 +142,10 @@ body {
   }
 }
 @keyframes thirdAscend {
-  30% {
+  27% {
     width: 0;
   }
-  50% {
+  47% {
     width: 85px;
   }
   100% {
@@ -163,33 +163,33 @@ body {
   left: 21px;
   top: 78px;
   transform: rotate(-45deg);
-  animation: firstAscend 3.5s linear infinite;
+  animation: firstAscend 6s linear infinite;
   animation-delay: 0.7s;
 }
 .ascend.second {
   left: 65px;
   top: 31px;
   transform: rotate(25deg);
-  animation: secondAscend 3.5s linear infinite;
+  animation: secondAscend 6s linear infinite;
   animation-delay: 0.7s;
 }
 .ascend.third {
   left: 115px;
   top: 57px;
   transform: rotate(-42deg);
-  animation: thirdAscend 3.5s linear infinite;
+  animation: thirdAscend 6s linear infinite;
   animation-delay: 0.7s;
 }
 
 @keyframes arrowHead {
-  34% {
+  30% {
     opacity: 0;
   }
-  35% {
+  31% {
     opacity: 1;
     transform: translate(15px, -15px) rotate(45deg);
   }
-  51% {
+  48% {
     opacity: 1;
     transform: translate(50px, -47px) rotate(45deg) scale(1.5);
   }
@@ -208,7 +208,7 @@ body {
   left: 115px;
   top: 48px;
   transform: rotate(45deg);
-  animation: arrowHead 3.5s linear infinite;
+  animation: arrowHead 6s linear infinite;
   animation-delay: 0.7s;
   opacity: 0;
 }
@@ -218,7 +218,7 @@ body {
     background-position-x: -150px;
   }
   to {
-    background-position-x: 180px;
+    background-position-x: 20px;
   }
 }
 .bull-wrapper {
@@ -232,8 +232,8 @@ body {
   top: 38px;
   background-size: 145px auto;
   background-position: -150px 13px;
-  animation: bull 3.5s ease-in-out infinite;
-  animation-delay: 2.4s;
+  animation: bull 6s ease-in-out infinite;
+  animation-delay: 2s;
 }
 
 /*# sourceMappingURL=style.css.map */
