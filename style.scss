@@ -12,12 +12,13 @@ body {
   align-items: center;
 }
 
-$logo-color: #861f41;
+$logo-color: #990a4b;
 $logo-container-width: 350px;
-$logo-container-height: 300px;
+$logo-container-height: 250px;
 $logo-container-padding: 10px;
+$logo-container-padding-top: 50px;
 $stock-bar-contaier-height: 110px;
-$line-thickness: 6px;
+$line-thickness: 8px;
 
 @mixin traingle-up(
   $base: 10px,
@@ -97,7 +98,7 @@ $line-thickness: 6px;
     width: 0;
   }
   to {
-    width: 67px;
+    width: 68px;
   }
 }
 
@@ -106,7 +107,7 @@ $line-thickness: 6px;
     width: 0;
   }
   to {
-    width: 58px;
+    width: 60px;
   }
 }
 
@@ -124,6 +125,7 @@ $line-thickness: 6px;
   height: $logo-container-height;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.75);
   padding: $logo-container-padding;
+  padding-top: $logo-container-padding-top;
 }
 
 .logo {
@@ -141,7 +143,7 @@ $line-thickness: 6px;
 
 .stock-bars {
   height: $stock-bar-contaier-height;
-  padding-left: 10px;
+  // padding-left: 10px;
   &::after {
     display: block;
     clear: both;
@@ -154,7 +156,7 @@ $line-thickness: 6px;
     margin-right: 20px;
     position: relative;
     margin-left: 20px;
-    bottom: -1px;
+    bottom: -2px;
   }
 
   .bar1 {
@@ -192,7 +194,7 @@ $line-thickness: 6px;
   transform-origin: left;
 
   &.first {
-    left: 30px;
+    left: 21px;
     top: 78px;
     transform: rotate(-45deg);
 
@@ -200,7 +202,7 @@ $line-thickness: 6px;
     animation-delay: 0.7s;
   }
   &.second {
-    left: 75px;
+    left: 65px;
     top: 31px;
     transform: rotate(25deg);
 
@@ -208,7 +210,7 @@ $line-thickness: 6px;
     animation-delay: 1.2s;
   }
   &.third {
-    left: 125px;
+    left: 115px;
     top: 57px;
     transform: rotate(-42deg);
 
@@ -221,9 +223,32 @@ $line-thickness: 6px;
   @include traingle-up();
   position: absolute;
   top: 13px;
-  left: 163px;
+  left: 153px;
   opacity: 0;
   transform: rotate(45deg);
   animation: arrowHead 0.6s ease-in-out forwards;
   animation-delay: 2s;
+}
+@keyframes bull {
+  from {
+    background-position-x: -150px;
+  }
+  to {
+    background-position-x: 180px;
+  }
+}
+
+.bull-wrapper {
+  overflow: hidden;
+  height: 150px;
+  width: 167px;
+  background-image: url(./bull-icon.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 170px;
+  top: 38px;
+  background-size: 145px auto;
+  background-position: -150px 13px;
+  animation: bull 12s ease-in-out infinite;
+  animation-delay: 1.2s;
 }
